@@ -6,39 +6,164 @@
 <title>Tech Guides | Umer Malik</title>
 <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:'Segoe UI',sans-serif;background:#eaf2fb;color:#222;}
-header{position:relative;background:linear-gradient(90deg,#0a3d91,#005fa3,#0078D7);color:#fff;padding:20px 30px;border-radius:40px;margin:15px;box-shadow:0 4px 15px rgba(0,0,0,0.25);text-align:center;}
-.nav{position:absolute;bottom:15px;right:30px;display:flex;gap:10px;}
-.nav a{color:#fff;text-decoration:none;font-weight:800;font-size:1rem;padding:8px 20px;border-radius:25px;background:rgba(255,255,255,0.15);transition:all 0.3s ease;}
-.nav a:hover{background:#ffffff;color:#005fa3;transform:scale(1.08);}
-.hero h1{font-size:1.6rem;font-weight:800;letter-spacing:0.5px;margin:0 0 6px 0;}
-.hero p{font-size:0.95rem;opacity:0.95;margin:0;padding-bottom:25px;}
-.container{max-width:800px;margin:60px auto;display:flex;flex-direction:column;align-items:center;gap:18px;}
-a.card{display:block;width:85%;text-align:center;text-decoration:none;background:#ffffff;padding:18px 20px;font-weight:800;font-size:1.05rem;border-radius:18px;box-shadow:0 12px 25px rgba(0,0,0,0.18);transition:all .35s ease;border-left:8px solid #0078D7;border-right:8px solid #0078D7;color:#004a99;}
-a.card:hover{transform:translateY(-8px) scale(1.03);box-shadow:0 20px 40px rgba(0,120,215,0.45);background:#f2f8ff;}
-.footer-container {text-align:center;width:100%;margin:70px 0 30px 0;}
-footer{display:inline-block;text-align:center;border-top:3px solid #FFD700;padding:10px 25px;font-size:0.9rem;font-style:italic;font-weight:600;background:#f4f8fd;color:#444;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,0.15);}
+/* Essential for pinning footer to bottom */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #eaf2fb;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: linear-gradient(90deg, #0a3d91, #005fa3, #0078D7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-spacer { flex: 1; }
+
+.hero {
+    flex: 2;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 1.6rem; 
+    font-weight: 800;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin: 2px 0 0 0;
+}
+
+.nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav a {
+    color: #0a3d91;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 10px;
+    background: #FFD700;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav a:hover {
+    background: #fff;
+    color: #0078D7;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0 20px;
+}
+
+a.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 18px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all .3s ease;
+    border-left: 5px solid #0078D7;
+    color: #004a99;
+}
+
+a.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,120,215,0.12);
+    background: #fdfdff;
+    border-left: 5px solid #FFD700;
+}
+
+@media (max-width: 768px) {
+    header { flex-direction: column; padding: 12px; }
+    .header-spacer { display: none; }
+    .nav { justify-content: center; margin-top: 8px; }
+    .container { grid-template-columns: 1fr; }
+}
+
+/* Footer Pinned to Very Bottom */
+.footer-container {
+    margin-top: auto; /* Pushes footer to the absolute bottom */
+    text-align: center;
+    width: 100%;
+    padding: 15px 0; /* Less vertical space */
+}
+
+footer {
+    display: inline-block;
+    border-top: 3px solid #FFD700;
+    padding: 8px 25px; /* Reduced area */
+    font-size: 0.95rem;
+    background: linear-gradient(135deg, #f8fbff, #edf5fe);
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+footer b i {
+    font-style: italic;
+    font-weight: bold;
+}
 </style>
 </head>
 <body>
+
 <header>
+  <div class="header-spacer"></div>
   <div class="hero">
     <h1>Tech Guides</h1>
-    <p>Practical technical tutorials, system walkthroughs, and real-world IT knowledge.</p>
+    <p>Practical technical tutorials and IT knowledge.</p>
   </div>
-  <div class="nav"><a href="https://umeraio.github.io/home/">🏠 Home</a></div>
+  <div class="nav">
+    <a href="https://umeraio.github.io/home/">🏠 Home</a>
+  </div>
 </header>
+
 <div class="container">
   <a href="https://umeraio.github.io/how-to-continue-from-old-thread-to-new-thread-with-same-context-/" class="card">How to Start a New Thread and Continue the Same Project</a>
-
   <a href="https://umeraio.github.io/enhance-sound/" class="card">Audacity Vocal Clarity</a>
   <a href="https://umeraio.github.io/pc-boot-process/index.html" class="card">The Anatomy of a PC Boot Cycle</a>
   <a href="https://umeraio.github.io/win11-tpm-update/" class="card">How to Update TPM 2.0 for Win 11</a>
   <a href="https://umeraio.github.io/github-html-files-update-/" class="card">Github HTML File-Update</a>
   <a href="https://umeraio.github.io/Creating-Publishing-website-GitHub-/" class="card">Creation, Publishing, Renaming & Deletion- Github</a>
 </div>
-<div class="footer-container"><footer>Crafted Through Research by Umer Malik</footer></div>
 
+<div class="footer-container">
+    <footer><b><i>Umer Malik: Where Craft Meets Research</i></b></footer>
+</div>
 
 </body>
 </html>
