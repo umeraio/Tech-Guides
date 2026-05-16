@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocal Clarity Blueprint - Audacity Guide</title>
+    <style>
+        :root {
+            --primary-accent: #6c5ce7;
+            --secondary-accent: #00d2d3;
+            --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            --main-container-bg: #ffffff; /* Prominent white center */
+            --dark-card-bg: #1e1b4b; /* Deep dark cards */
+            --text-on-white: #2d3436;
+            --text-on-dark: #f1f2f6;
+            --path-highlight: #55efc4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-gradient);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* The Prominent White Background */
+        .container {
+            max-width: 850px;
+            width: 100%;
+            background: var(--main-container-bg);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        h1 {
+            color: var(--primary-accent);
+            font-size: 3em;
+            margin: 0;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            color: var(--text-on-white);
+            font-size: 1.1em;
+            font-weight: 500;
+            opacity: 0.7;
+        }
+
+        .prep-zone {
+            background: #f0f3ff;
+            border: 2px solid var(--primary-accent);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            color: var(--text-on-white);
+        }
+
+        .prep-zone h2 {
+            margin-top: 0;
+            color: var(--primary-accent);
+            font-size: 1.4em;
+        }
+
+        /* The Darker Step Cards */
+        .step-card {
+            background: var(--dark-card-bg);
+            margin-bottom: 25px;
+            padding: 30px;
+            border-radius: 18px;
+            color: var(--text-on-dark);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-right: 8px solid var(--secondary-accent);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateX(10px);
+            background: #25225d;
+        }
+
+        .step-badge {
+            background: var(--secondary-accent);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .step-title {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--path-highlight);
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .menu-path {
+            background: rgba(255,255,255,0.1);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-family: 'Consolas', monospace;
+            color: var(--path-highlight);
+            border: 1px solid rgba(85, 239, 196, 0.3);
+        }
+
+        .footer-tips {
+            background: #f8f9fa;
+            border-top: 4px solid var(--primary-accent);
+            padding: 30px;
+            border-radius: 0 0 15px 15px;
+            margin-top: 20px;
+        }
+
+        .footer-tips h3 {
+            color: var(--primary-accent);
+            margin-top: 0;
+        }
+
+        .signature {
+            margin-top: 40px;
+            text-align: center;
+            color: #fff;
+            font-style: italic;
+            font-size: 1.1em;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+
+        strong {
+            color: var(--secondary-accent);
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Vocal Clarity Blueprint</h1>
+        <p class="subtitle">Broadcast-quality audio processing guide for Audacity</p>
+    </header>
+
+    <div class="prep-zone">
+        <h2>Before You Record: Step Zero</h2>
+        <p>Hit record and remain <strong>completely silent for 4 to 8 seconds</strong>. This creates a "Noise Profile" that is essential for removing background hiss and AC hum later.</p>
+    </div>
+
+    <div class="step-card">
+        <div class="step-badge">Phase 1</div>
+        <span class="step-title">Noise Reduction</span>
+        <p>Highlight the silence. Go to <span class="menu-path">Effect > Noise Removal > Noise Reduction</span> and click <strong>"Get Noise Profile"</strong>. Then select everything (Ctrl+A), return to the menu, and click <strong>OK</strong>.</p>
+    </div>
+
+    <div class="step-card">
+        <div class="step-badge">Phase 2</div>
+        <span class="step-title">Tone Optimization</span>
+        <p>Open <span class="menu-path">Effect > EQ and Filters > Filter Curve EQ</span>. Go to <strong>Factory Presets</strong> and apply <strong>Bass Boost</strong>. Open it once more and apply <strong>Treble Boost</strong> for high-end clarity.</p>
+    </div>
+
+    <div class="step-card">
+        <div class="step-badge">Phase 3</div>
+        <span class="step-title">Low Roll-off</span>
+        <p>Inside <span class="menu-path">Filter Curve EQ</span>, select <strong>Factory Presets > Low roll-off for speech</strong>. This eliminates low-end rumble and makes the vocal frequency tighter.</p>
+    </div>
+
+    <div class="step-card">
+        <div class="step-badge">Phase 4</div>
+        <span class="step-title">Compression</span>
+        <p>Go to <span class="menu-path">Effect > Volume & Compression > Compressor</span>. Apply the default settings to smooth out the difference between your loudest and quietest words.</p>
+    </div>
+
+    <div class="step-card">
+        <div class="step-badge">Phase 5</div>
+        <span class="step-title">Final Normalization</span>
+        <p>Go to <span class="menu-path">Effect > Volume & Compression > Normalize</span>. Set <strong>Peak Amplitude to 0.0 dB</strong> and Apply. This pushes your volume to the professional standard.</p>
+    </div>
+
+    <div class="footer-tips">
+        <h3>Quick Checklist</h3>
+        <ul>
+            <li>Sit 6-8 inches away from the mic.</li>
+            <li>Angle the mic 45 degrees to avoid "plosives" (P and B sounds).</li>
+            <li>Always export as a <strong>WAV</strong> file for master quality.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="signature">
+    Crafted & Designed by Umer Malik
+</div>
+
+</body>
+</html>
