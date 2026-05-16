@@ -3,167 +3,268 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tech Guides | Umer Malik</title>
-<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>IT & Tech Guides | Umer Malik</title>
 <style>
-/* Essential for pinning footer to bottom */
-html, body {
-    height: 100%;
-    margin: 0;
+:root{
+  --bg:#eaf4ff;
+  --bg2:#fff7df;
+  --primary:#0b4f9c;
+  --primary2:#0f7bdc;
+  --gold:#f4c542;
+  --orange:#ffb84d;
+  --blue:#0878d8;
+  --text:#172033;
+  --muted:#5f6b7a;
+  --shadow:0 22px 55px rgba(11,79,156,0.18);
 }
-
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #eaf2fb;
-    color: #222;
-    display: flex;
-    flex-direction: column;
+*{box-sizing:border-box;}
+html{
+  scrollbar-width:thin;
+  scrollbar-color:var(--gold) rgba(11,79,156,0.18);
 }
-
-header {
-    background: linear-gradient(90deg, #0a3d91, #005fa3, #0078D7);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  color:var(--text);
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top left,#dbeafe 0,transparent 32%),
+    radial-gradient(circle at top right,#fff0b8 0,transparent 30%),
+    linear-gradient(135deg,var(--bg),var(--bg2));
+  overflow-x:hidden;
 }
-
-.header-spacer { flex: 1; }
-
-.hero {
-    flex: 2;
-    text-align: center;
+body::-webkit-scrollbar{width:11px;}
+body::-webkit-scrollbar-track{background:rgba(11,79,156,0.10);border-radius:999px;}
+body::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,var(--gold),var(--orange),var(--primary2));
+  border-radius:999px;
+  border:3px solid rgba(255,255,255,0.75);
 }
-
-.hero h1 {
-    font-size: 1.6rem; 
-    font-weight: 800;
-    margin: 0;
+.wrapper{
+  width:min(1180px,92%);
+  margin:0 auto;
+  padding:18px 0 28px;
 }
-
-.hero p {
-    font-size: 0.85rem;
-    opacity: 0.9;
-    margin: 2px 0 0 0;
+.top-nav{
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom:6px;
 }
-
-.nav {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
+.home-btn{
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#5b1d91,#7a2bc2);
+  color:#fff;
+  font-weight:800;
+  padding:12px 22px;
+  border-radius:999px;
+  box-shadow:0 14px 32px rgba(91,29,145,0.24);
+  transition:all .25s ease;
 }
-
-.nav a {
-    color: #0a3d91;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 0.8rem;
-    padding: 6px 14px;
-    border-radius: 10px;
-    background: #FFD700;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-    white-space: nowrap;
+.home-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 20px 42px rgba(91,29,145,0.34);
 }
-
-.nav a:hover {
-    background: #fff;
-    color: #0078D7;
+.hero{
+  text-align:center;
+  padding:0 18px 26px;
 }
-
-.container {
-    max-width: 1000px;
-    margin: 30px auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 0 20px;
+.hero h1{
+  margin:0;
+  font-size:clamp(46px,7vw,78px);
+  line-height:1;
+  color:var(--blue);
+  font-weight:900;
+  letter-spacing:-1px;
 }
-
-a.card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
-    background: #ffffff;
-    padding: 18px;
-    font-weight: 700;
-    font-size: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: all .3s ease;
-    border-left: 5px solid #0078D7;
-    color: #004a99;
+.hero .cap{
+  font-size:48px;
+  display:inline-block;
+  margin-right:14px;
+  vertical-align:middle;
 }
-
-a.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0,120,215,0.12);
-    background: #fdfdff;
-    border-left: 5px solid #FFD700;
+.hero p{
+  max-width:850px;
+  margin:28px auto 0;
+  color:#4e5868;
+  font-size:clamp(22px,3vw,38px);
+  line-height:1.35;
 }
-
-@media (max-width: 768px) {
-    header { flex-direction: column; padding: 12px; }
-    .header-spacer { display: none; }
-    .nav { justify-content: center; margin-top: 8px; }
-    .container { grid-template-columns: 1fr; }
+.section-card{
+  background:rgba(255,255,255,0.72);
+  border:1px solid rgba(20,85,163,0.16);
+  border-radius:34px;
+  padding:32px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(14px);
 }
-
-/* Footer Pinned to Very Bottom */
-.footer-container {
-    margin-top: auto; /* Pushes footer to the absolute bottom */
-    text-align: center;
-    width: 100%;
-    padding: 15px 0; /* Less vertical space */
+.section-title{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin:0 0 26px;
+  color:var(--primary);
+  font-size:clamp(30px,4vw,48px);
+  font-weight:900;
+  text-align:center;
 }
-
-footer {
-    display: inline-block;
-    border-top: 3px solid #FFD700;
-    padding: 8px 25px; /* Reduced area */
-    font-size: 0.95rem;
-    background: linear-gradient(135deg, #f8fbff, #edf5fe);
-    color: #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
 }
-
-footer b i {
-    font-style: italic;
-    font-weight: bold;
+.card{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  text-decoration:none;
+  background:linear-gradient(180deg,#ffffff,#f8fbff);
+  color:var(--primary);
+  border-radius:24px;
+  padding:24px;
+  min-height:120px;
+  box-shadow:0 18px 42px rgba(11,79,156,0.16);
+  border:1px solid rgba(20,85,163,0.20);
+  border-left:8px solid var(--primary);
+  overflow:hidden;
+  transition:all .25s ease;
+}
+.card::after{
+  content:"";
+  position:absolute;
+  right:-45px;
+  top:-45px;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:rgba(15,123,220,0.13);
+}
+.card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 28px 62px rgba(11,79,156,0.26);
+  border-left-color:var(--gold);
+}
+.icon{
+  width:58px;
+  height:58px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  font-size:30px;
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  color:#fff;
+  box-shadow:0 12px 24px rgba(11,79,156,0.22);
+  position:relative;
+  z-index:1;
+}
+.card-content{
+  position:relative;
+  z-index:1;
+}
+.card h2{
+  margin:0 0 7px;
+  font-size:21px;
+  color:var(--primary);
+}
+.card p{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.55;
+}
+.footer-container{
+  text-align:center;
+  margin:34px 0 0;
+}
+footer{
+  display:inline-block;
+  background:rgba(255,255,255,0.78);
+  border-top:3px solid var(--gold);
+  color:#46505f;
+  padding:12px 24px;
+  border-radius:18px;
+  font-size:14px;
+  font-weight:700;
+  font-style:italic;
+  box-shadow:0 12px 28px rgba(11,79,156,0.14);
+}
+@media(max-width:800px){
+  .cards{grid-template-columns:1fr;}
+  .section-card{padding:22px;}
+  .hero p{font-size:22px;}
+  .card{padding:20px;min-height:auto;}
 }
 </style>
 </head>
 <body>
-
-<header>
-  <div class="header-spacer"></div>
-  <div class="hero">
-    <h1>Tech Guides</h1>
-    <p>Practical technical tutorials and IT knowledge.</p>
+<div class="wrapper">
+  <div class="top-nav">
+    <a class="home-btn" href="https://umeraio.github.io/home/">Home</a>
   </div>
-  <div class="nav">
-    <a href="https://umeraio.github.io/home/">🏠 Home</a>
+
+  <section class="hero">
+    <h1><span class="cap">📁</span>IT & Tech Guides</h1>
+    <p>Practical technical tutorials, system walkthroughs, and real-world IT knowledge.</p>
+  </section>
+
+  <section class="section-card">
+    <h2 class="section-title">Explore Tech Tutorials</h2>
+
+    <div class="cards">
+      <a href="Audacity-How-2-Enhance-Sound.html" class="card">
+        <span class="icon">🎧</span>
+        <span class="card-content">
+          <h2>Audacity - How to Enhance Sound</h2>
+          <p>Step-by-step audio improvement guidance using Audacity.</p>
+        </span>
+      </a>
+      <a href="How-2-Create-Publish-Website-On-GITHUB.html" class="card">
+        <span class="icon">🌐</span>
+        <span class="card-content">
+          <h2>How to Create and Publish a Website on GitHub</h2>
+          <p>Practical guide for building and publishing HTML websites with GitHub.</p>
+        </span>
+      </a>
+      <a href="How-2-UPDATE-Html-Files.html" class="card">
+        <span class="icon">📝</span>
+        <span class="card-content">
+          <h2>How to Update HTML Files</h2>
+          <p>Simple guidance for editing, updating, and managing HTML files.</p>
+        </span>
+      </a>
+      <a href="How-2-UPDate-TPM.html" class="card">
+        <span class="icon">🔐</span>
+        <span class="card-content">
+          <h2>How to Update TPM</h2>
+          <p>Technical walkthrough for TPM updates and related system checks.</p>
+        </span>
+      </a>
+      <a href="Old-Thrd-2-New-Thrd-IN-AI.html" class="card">
+        <span class="icon">🤖</span>
+        <span class="card-content">
+          <h2>Old Thread to New Thread in AI</h2>
+          <p>How to move project context from one AI conversation thread to another.</p>
+        </span>
+      </a>
+      <a href="Pc-Boot-UP-Process.html" class="card">
+        <span class="icon">💻</span>
+        <span class="card-content">
+          <h2>PC Boot Up Process</h2>
+          <p>Clear explanation of what happens when a computer starts up.</p>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <div class="footer-container">
+    <footer>Umer Malik: Where Craft Meets Research</footer>
   </div>
-</header>
-
-<div class="container">
-  <a href="https://umeraio.github.io/how-to-continue-from-old-thread-to-new-thread-with-same-context-/" class="card">How to Start a New Thread and Continue the Same Project</a>
-  <a href="https://umeraio.github.io/enhance-sound/" class="card">Audacity Vocal Clarity</a>
-  <a href="https://umeraio.github.io/pc-boot-process/index.html" class="card">The Anatomy of a PC Boot Cycle</a>
-  <a href="https://umeraio.github.io/win11-tpm-update/" class="card">How to Update TPM 2.0 for Win 11</a>
-  <a href="https://umeraio.github.io/github-html-files-update-/" class="card">Github HTML File-Update</a>
-  <a href="https://umeraio.github.io/Creating-Publishing-website-GitHub-/" class="card">Creation, Publishing, Renaming & Deletion- Github</a>
 </div>
-
-<div class="footer-container">
-    <footer><b><i>Umer Malik: Where Craft Meets Research</i></b></footer>
-</div>
-
 </body>
 </html>
